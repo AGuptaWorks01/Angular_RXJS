@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   isOnline: boolean = true;
+
   constructor(private NetworkService: NetworkService) { }
 
   ngOnInit(): void {
