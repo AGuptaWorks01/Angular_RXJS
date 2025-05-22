@@ -6,20 +6,32 @@
     <div class="col-md-6">
       <strong>Ex - 01 (Manual)</strong>
       <hr />
-      <ul class="techList">
-        <li>Angular</li>
-        <li>TypeScript</li>
-        <li>JS</li>
-      </ul>
+      <ul
+        [ngClass]="
+          takeStatus === 'completed'
+            ? 'completed'
+            : takeStatus === 'error'
+            ? 'error'
+            : ''
+        "
+        class="techList"
+        id="alContainer"
+      ></ul>
     </div>
     <div class="col-md-6">
       <strong>Ex - 02 (Custom Interval Observable)</strong>
       <hr />
-      <ul class="techList">
-        <li>Angular</li>
-        <li>TypeScript</li>
-        <li>JS</li>
-      </ul>
+      <ul
+        [ngClass]="
+          takeStatus2 === 'completed'
+            ? 'completed'
+            : takeStatus2 === 'error'
+            ? 'error'
+            : ''
+        "
+        class="techList"
+        id="alContainer1"
+      ></ul>
     </div>
   </div>
   <br />
@@ -32,8 +44,29 @@
         'Abc','XYZ','A2Z','Hello', 'Boy'
       </p>
       <hr />
-      <p>Current Name: <strong class="text-success">Ang</strong></p>
-      <span class="badge bg-success text-light">Success</span>
+      <p>
+        Current Name:
+        <strong>{{ names }}</strong>
+      </p>
+
+      <span
+        class="badge text-light"
+        [ngClass]="
+          nameStatus === 'completed'
+            ? 'bg-success'
+            : nameStatus === 'error'
+            ? 'bg-danger'
+            : 'bg-primary'
+        "
+      >
+        {{
+          nameStatus === "completed"
+            ? "Success"
+            : nameStatus === "error"
+            ? "Error"
+            : "Waiting..."
+        }}
+      </span>
     </div>
   </div>
 </div>
